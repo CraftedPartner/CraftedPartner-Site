@@ -21,6 +21,13 @@
 <meta name="twitter:title" content="Contact Us | Crafted Consulting">
 <meta name="twitter:description" content="Tell us what&#x27;s broken. A person reads every message, and we get back to you within a business day.">
 <meta name="twitter:image" content="https://www.craftedconsultingusa.com/og-image.jpg">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-99HH04SY9J"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-99HH04SY9J');
+</script>
 <style>
 @font-face {
   font-family: 'Archivo';
@@ -2768,6 +2775,7 @@ select:focus-visible,
       headers: { 'Accept': 'application/json' }
     }).then(function(r){
       if(r.ok){
+        if(window.gtag) gtag('event', 'generate_lead', { form: 'contact' });
         var wrap = form.parentNode;
         var ty = document.createElement('div');
         ty.className = 'thank-you';

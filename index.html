@@ -21,6 +21,13 @@
 <meta name="twitter:title" content="Recruiting and Fractional HR in Denver | Crafted Consulting">
 <meta name="twitter:description" content="Recruiting, fractional HR, and management consulting for small businesses, nonprofits, and behavioral health orgs. Senior expertise without the overhead.">
 <meta name="twitter:image" content="https://www.craftedconsultingusa.com/og-image.jpg">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-99HH04SY9J"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-99HH04SY9J');
+</script>
 <style>
 @font-face {
   font-family: 'Archivo';
@@ -2765,6 +2772,7 @@ select:focus-visible,
     fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } })
     .then(function(r){
       if(r.ok){
+        if(window.gtag) gtag('event', 'generate_lead', { form: 'contact' });
         var ty = document.createElement('div');
         ty.className = 'thank-you';
         ty.innerHTML = '<h3>Sent.</h3><p>We\'ll get back to you within a business day. Usually faster.</p>';

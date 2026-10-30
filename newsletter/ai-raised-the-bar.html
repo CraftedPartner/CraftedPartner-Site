@@ -21,6 +21,13 @@
 <meta name="twitter:title" content="AI Raised the Bar + Say It Again + Goals Keep Jobs">
 <meta name="twitter:description" content="Candidates use AI to polish resumes and coach interviews. How to update your hiring playbook so you still spot the real thing. April 2026.">
 <meta name="twitter:image" content="https://www.craftedconsultingusa.com/og-image.jpg">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-99HH04SY9J"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-99HH04SY9J');
+</script>
 <style>
 @font-face {
   font-family: 'Archivo';
@@ -2819,32 +2826,6 @@ select:focus-visible,
 </script>
 <script>
 (function(){
-  var f = document.querySelector('.nl-form');
-  if(!f) return;
-  f.addEventListener('submit', function(e){
-    e.preventDefault();
-    var btn = f.querySelector('button[type="submit"]');
-    if(btn){ btn.disabled = true; btn.textContent = 'Subscribing\u2026'; }
-    fetch(f.action, {
-      method: 'POST',
-      body: new FormData(f),
-      headers: { 'Accept': 'application/json' }
-    }).then(function(r){
-      if(!r.ok) throw new Error();
-      var ty = document.createElement('p');
-      ty.className = 'nl-sub';
-      ty.setAttribute('role', 'status');
-      ty.innerHTML = '<strong>You\'re in.</strong> Next issue lands in your inbox early next month.';
-      f.parentNode.replaceChild(ty, f);
-    }).catch(function(){
-      alert('Something went wrong. Please try again.');
-      if(btn){ btn.disabled = false; btn.innerHTML = 'Subscribe &rarr;'; }
-    });
-  });
-})();
-</script>
-<script>
-(function(){
   document.querySelectorAll('form.nl-form').forEach(function(form){
     form.addEventListener('submit', function(e){
       e.preventDefault();
@@ -2856,10 +2837,11 @@ select:focus-visible,
         headers: { 'Accept': 'application/json' }
       }).then(function(r){
         if(r.ok){
+          if(window.gtag) gtag('event', 'sign_up', { method: 'newsletter' });
           var msg = document.createElement('p');
           msg.className = 'nl-success';
           msg.style.cssText = 'font-weight:600;margin:0;';
-          msg.textContent = "You're in. One email a month \u2014 no fluff.";
+          msg.textContent = "You're in. One email a month. No fluff.";
           form.replaceWith(msg);
         } else { throw new Error(); }
       }).catch(function(){
