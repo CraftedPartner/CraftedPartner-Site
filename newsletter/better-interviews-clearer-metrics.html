@@ -4,8 +4,23 @@
 <meta charset="utf-8">
 <link rel="icon" type="image/png" href="../assets/img/favicon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Newsletter — Crafted Consulting</title>
+<title>Better Interviews + Clearer Metrics + Less Burnout | Crafted Consulting</title>
+<meta name="description" content="Stale interviews lead to bad hires. How to train hiring managers and refresh your interview questions, with an AI prompt to start. September 2025.">
 <link rel="canonical" href="https://www.craftedconsultingusa.com/newsletter/better-interviews-clearer-metrics.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Crafted Consulting">
+<meta property="og:title" content="Better Interviews + Clearer Metrics + Less Burnout">
+<meta property="og:description" content="Stale interviews lead to bad hires. How to train hiring managers and refresh your interview questions, with an AI prompt to start. September 2025.">
+<meta property="og:url" content="https://www.craftedconsultingusa.com/newsletter/better-interviews-clearer-metrics.html">
+<meta property="og:image" content="https://www.craftedconsultingusa.com/og-image.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Crafted: Recruiting, Fractional HR, Management Consulting">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Better Interviews + Clearer Metrics + Less Burnout">
+<meta name="twitter:description" content="Stale interviews lead to bad hires. How to train hiring managers and refresh your interview questions, with an AI prompt to start. September 2025.">
+<meta name="twitter:image" content="https://www.craftedconsultingusa.com/og-image.jpg">
 <style>
 @font-face {
   font-family: 'Archivo';
@@ -2802,7 +2817,32 @@ select:focus-visible,
   });}
 })();
 </script>
-<script>(function(){var f=document.querySelector('.nl-form');if(f){f.addEventListener('submit',function(e){if(!f.getAttribute('action')){e.preventDefault();}});}})();</script>
+<script>
+(function(){
+  var f = document.querySelector('.nl-form');
+  if(!f) return;
+  f.addEventListener('submit', function(e){
+    e.preventDefault();
+    var btn = f.querySelector('button[type="submit"]');
+    if(btn){ btn.disabled = true; btn.textContent = 'Subscribing\u2026'; }
+    fetch(f.action, {
+      method: 'POST',
+      body: new FormData(f),
+      headers: { 'Accept': 'application/json' }
+    }).then(function(r){
+      if(!r.ok) throw new Error();
+      var ty = document.createElement('p');
+      ty.className = 'nl-sub';
+      ty.setAttribute('role', 'status');
+      ty.innerHTML = '<strong>You\'re in.</strong> Next issue lands in your inbox early next month.';
+      f.parentNode.replaceChild(ty, f);
+    }).catch(function(){
+      alert('Something went wrong. Please try again.');
+      if(btn){ btn.disabled = false; btn.innerHTML = 'Subscribe &rarr;'; }
+    });
+  });
+})();
+</script>
 <script>
 (function(){
   document.querySelectorAll('form.nl-form').forEach(function(form){
