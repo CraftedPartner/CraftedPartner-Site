@@ -2817,3 +2817,11 @@ select:focus-visible,
 .about-hero-split .about-hero-sub { max-width: 34ch; }
 .ahs-media img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 14px; box-shadow: 0 18px 40px rgba(0, 0, 0, .35); }
 @media (max-width: 899px) { .ahs-media { margin-top: 32px; } }
+
+/* About page: Our DNA values */
+.dna-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+.dna-item { border-top: 3px solid #F2C345; padding-top: 24px; }
+.dna-word { margin: 0; font-family: var(--font-display); font-weight: 900; font-size: clamp(44px, 4.4vw, 64px); line-height: 1; letter-spacing: -.02em; color: #FFFFFF; }
+.dna-word .hl-dot { color: #F2C345; }
+.dna-p { margin: 16px 0 0; font-size: 17px; line-height: 1.55; color: #F5F0E8; max-width: 28ch; }
+@media (max-width: 760px) { .dna-grid { grid-template-columns: 1fr; gap: 32px; } }
