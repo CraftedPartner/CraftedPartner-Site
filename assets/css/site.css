@@ -2760,3 +2760,17 @@ select:focus-visible,
   .review-dot.is-active { width: 18px; }
   .review-arrow { flex-shrink: 0; }
 }
+
+/* How we work: left-aligned steps with big numbers */
+.how-section .steps.steps-v2::before { display: none; }
+.steps-v2 { gap: 32px; }
+.steps-v2 .step { align-items: flex-start; text-align: left; gap: 12px; border-top: 3px solid #F2C345; padding-top: 22px; }
+.steps-v2 .step-num { font-family: var(--font-display); font-weight: 900; font-size: clamp(48px, 5vw, 72px); line-height: .9; letter-spacing: -.03em; color: #7D4228; }
+.steps-v2 .step-h { font-size: 24px; margin-top: 6px; }
+.how-section .steps-v2 .step-p { font-size: 16px; line-height: 1.55; color: #2E3530; max-width: 30ch; }
+.how-foot { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-top: 56px; padding-top: 28px; border-top: 1px solid rgba(125, 66, 40, .25); }
+.how-foot p { margin: 0; font-family: var(--font-serif); font-size: 20px; color: #2E3530; }
+@media (max-width: 760px) {
+  .steps-v2 { grid-template-columns: 1fr; gap: 36px; }
+  .how-foot { flex-direction: column; align-items: flex-start; }
+}
