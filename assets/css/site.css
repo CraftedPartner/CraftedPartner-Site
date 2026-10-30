@@ -2774,3 +2774,24 @@ select:focus-visible,
   .steps-v2 { grid-template-columns: 1fr; gap: 36px; }
   .how-foot { flex-direction: column; align-items: flex-start; }
 }
+
+/* Homepage service cards */
+.svc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.svc-card {
+  display: flex; flex-direction: column; gap: 10px;
+  background: #FFFFFF; border-radius: 14px; border-top: 4px solid #F2C345;
+  padding: 32px 30px 28px; text-decoration: none; color: #2E3530;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .18);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.svc-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0, 0, 0, .28); }
+.svc-name { font-family: var(--font-display); font-weight: 800; font-size: 28px; line-height: 1.1; letter-spacing: -.01em; }
+.svc-tag { font-family: var(--font-serif); font-style: italic; font-size: 19px; color: #7D4228; }
+.svc-body { margin: 6px 0 0; font-size: 16px; line-height: 1.55; color: #2E3530; max-width: 34ch; }
+.svc-more { margin-top: auto; padding-top: 18px; font-weight: 700; font-size: 14px; color: #7D4228; }
+.svc-more span { display: inline-block; transition: transform .2s ease; }
+.svc-card:hover .svc-more span { transform: translateX(4px); }
+@media (max-width: 900px) {
+  .svc-grid { grid-template-columns: 1fr; gap: 16px; }
+  .svc-card { padding: 26px 22px 22px; }
+}
