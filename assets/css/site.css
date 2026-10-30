@@ -2695,26 +2695,32 @@ select:focus-visible,
 /* Fixed-width digits so the hero stats don't jitter while counting up */
 .hero .meta .stat-num { font-variant-numeric: tabular-nums; }
 
-/* Homepage hero: team cutout on the right (desktop only; phones never download it) */
-.hero-team { display: none; }
+/* Homepage hero: team headshot collage on the right (desktop only; phones never download it) */
+.hero-collage { display: none; }
 @media (min-width: 1240px) {
   .hero { padding-top: 72px !important; }
   .hero-inner { width: 100%; margin: 0 auto; }
   .hero .hero-title { font-size: clamp(72px, 6vw, 92px); }
   .hero .hero-sub { max-width: 600px; font-size: 22px; }
   .hero .meta { max-width: 600px; }
-  .hero-team {
-    display: block;
-    position: absolute; right: 0; bottom: 0;
-    width: min(48vw, 800px);
-    z-index: 1;
-    pointer-events: none;
-    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 14%), linear-gradient(to top, transparent 0, #000 10%);
-    -webkit-mask-composite: source-in;
-            mask-image: linear-gradient(to right, transparent 0, #000 14%), linear-gradient(to top, transparent 0, #000 10%);
-            mask-composite: intersect;
+  .hero-collage {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;
+    position: absolute; z-index: 1;
+    right: max(56px, calc((100vw - 1280px) / 2));
+    top: 50%; transform: translateY(-46%);
+    width: min(40vw, 580px);
   }
-  .hero-team img { display: block; width: 100%; height: auto; }
+  .hero-collage img, .hero-collage-tile {
+    width: 100%; aspect-ratio: 1; object-fit: cover;
+    border-radius: 12px; box-shadow: 0 10px 30px rgba(0, 0, 0, .25);
+  }
+  .hero-collage > :nth-child(4n+2), .hero-collage > :nth-child(4n+4) { transform: translateY(28px); }
+  .hero-collage-tile {
+    display: flex; align-items: flex-end; padding: 14px; box-sizing: border-box;
+    background: #F2C345; color: #2E3530; text-decoration: none;
+    font: 800 15px/1.15 var(--font-display);
+  }
+  .hero-collage-tile:hover { background: #F5CF62; }
 }
 
 /* Scroll fade-in (classes added by assets/js/site.js) */
