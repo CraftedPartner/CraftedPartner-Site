@@ -2688,7 +2688,7 @@ select:focus-visible,
 
 /* Homepage hero: tighter on laptops so the stats sit above the fold */
 @media (min-width: 761px) {
-  .hero { min-height: 0; padding: 96px var(--gutter) 64px !important; }
+  .hero { min-height: 0; padding: 40px var(--gutter) 64px !important; }
   .hero .meta { margin-top: 44px; }
 }
 
