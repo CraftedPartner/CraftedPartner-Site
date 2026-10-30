@@ -2698,14 +2698,15 @@ select:focus-visible,
 /* Homepage hero: team cutout on the right (desktop only; phones never download it) */
 .hero-team { display: none; }
 @media (min-width: 1240px) {
+  .hero { padding-top: 72px !important; }
   .hero-inner { width: 100%; margin: 0 auto; }
-  .hero .hero-title { font-size: clamp(72px, 6.2vw, 96px); }
-  .hero .hero-sub { max-width: 560px; }
-  .hero .meta { max-width: 640px; }
+  .hero .hero-title { font-size: clamp(72px, 6vw, 92px); }
+  .hero .hero-sub { max-width: 600px; font-size: 22px; }
+  .hero .meta { max-width: 600px; }
   .hero-team {
     display: block;
     position: absolute; right: 0; bottom: 0;
-    width: min(52vw, 820px);
+    width: min(48vw, 800px);
     z-index: 1;
     pointer-events: none;
     -webkit-mask-image: linear-gradient(to right, transparent 0, #000 14%), linear-gradient(to top, transparent 0, #000 10%);
