@@ -2723,10 +2723,6 @@ select:focus-visible,
   .hero-collage-tile:hover { background: #F5CF62; }
 }
 
-/* Scroll fade-in (classes added by assets/js/site.js) */
-.reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
-.reveal.is-visible { opacity: 1; transform: none; }
-
 /* Hairline between the last section and the footer */
 .site-footer { border-top: 1px solid rgba(242, 195, 69, 0.22); }
 
