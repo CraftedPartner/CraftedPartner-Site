@@ -2691,3 +2691,6 @@ select:focus-visible,
   .hero { min-height: 0; padding: 96px var(--gutter) 64px !important; }
   .hero .meta { margin-top: 44px; }
 }
+
+/* Fixed-width digits so the hero stats don't jitter while counting up */
+.hero .meta .stat-num { font-variant-numeric: tabular-nums; }

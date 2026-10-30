@@ -144,5 +144,31 @@
   });
 })();
 </script>
+<script>
+(function(){
+  // Count the hero stats up from zero on page load. Final values stay in the HTML.
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var nums = document.querySelectorAll('.hero .meta .stat-num');
+  var items = [];
+  nums.forEach(function(el){
+    var m = el.textContent.trim().match(/^([\d,]+)(.*)$/);
+    if (!m) return;
+    items.push({ el: el, target: parseInt(m[1].replace(/,/g, ''), 10), suffix: m[2] });
+    el.textContent = '0' + m[2];
+  });
+  if (!items.length) return;
+  var duration = 1600, start = null;
+  function frame(t){
+    if (start === null) start = t;
+    var p = Math.min((t - start) / duration, 1);
+    var eased = 1 - Math.pow(1 - p, 3);
+    items.forEach(function(it){
+      it.el.textContent = Math.round(it.target * eased).toLocaleString('en-US') + it.suffix;
+    });
+    if (p < 1) requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+})();
+</script>
 </body>
 </html>
