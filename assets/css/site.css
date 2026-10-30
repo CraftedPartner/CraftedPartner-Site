@@ -2737,6 +2737,26 @@ select:focus-visible,
   .pricing-grid { grid-template-columns: 1fr; gap: 30px; }
 }
 
-/* Google reviews link */
-.reviews-rating-meta a { color: inherit; text-decoration: none; border-bottom: 1px solid currentColor; }
-.reviews-rating-meta a:hover { opacity: .75; }
+/* Google reviews badge (homepage testimonials header) */
+.reviews-section .reviews-badge {
+  display: inline-flex; align-items: center; gap: 14px;
+  padding: 12px 18px 12px 16px;
+  background: #FFFFFF; border: 1px solid rgba(125, 66, 40, 0.18); border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(46, 53, 48, 0.08);
+  text-decoration: none; color: #2E3530;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.reviews-section .reviews-badge:hover { transform: translateY(-2px); box-shadow: 0 10px 26px rgba(46, 53, 48, 0.14); }
+.reviews-badge .rb-score { font-family: var(--font-display); font-weight: 800; font-size: 34px; line-height: 1; letter-spacing: -0.02em; }
+.reviews-badge .rb-body { display: flex; flex-direction: column; gap: 4px; }
+.reviews-section .reviews-badge .stars { display: flex; gap: 2px; color: #F2C345; }
+.reviews-badge .rb-label { font-family: var(--font-sans); font-size: 14px; font-weight: 700; color: #7D4228; }
+
+/* Phones: fit the review arrows and 12 dots on one row */
+@media (max-width: 480px) {
+  .reviews-controls { gap: 10px; }
+  .review-dots { gap: 6px; min-width: 0; }
+  .review-dot { width: 8px; height: 8px; flex-shrink: 0; }
+  .review-dot.is-active { width: 18px; }
+  .review-arrow { flex-shrink: 0; }
+}
