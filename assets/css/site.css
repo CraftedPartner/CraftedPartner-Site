@@ -2795,3 +2795,16 @@ select:focus-visible,
   .svc-grid { grid-template-columns: 1fr; gap: 16px; }
   .svc-card { padding: 26px 22px 22px; }
 }
+
+/* Pricing cards: same-size prices on one line, rows aligned across both cards */
+.pricing-from { margin-top: 14px; font-size: 15px; font-weight: 600; color: #5E574B; }
+.pricing-card .pricing-price { margin-top: 2px; font-size: clamp(40px, 4vw, 52px); white-space: nowrap; }
+.pricing-card .pricing-desc, .pricing-card .pricing-note { min-height: 0; }
+.pricing-card .pricing-note { align-self: start; }
+.pricing-card .pricing-cta { top: 0; margin-top: 28px; }
+@media (min-width: 861px) {
+  @supports (grid-template-rows: subgrid) {
+    .pricing-card { display: grid; grid-row: span 6; grid-template-rows: subgrid; row-gap: 0; }
+    .pricing-card .pricing-cta { align-self: end; justify-self: start; }
+  }
+}
