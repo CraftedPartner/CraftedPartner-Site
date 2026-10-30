@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="icon" type="image/png" href="/assets/img/favicon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page not found | Crafted Consulting</title>
+<meta name="robots" content="noindex">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-99HH04SY9J"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-99HH04SY9J');
+</script>
+<link rel="stylesheet" href="/assets/css/site.css">
+</head>
+<body>
+<header class="site-nav"><div class="site-nav-inner"><a href="/index.html" class="logo" aria-label="Crafted home"><img src="/assets/img/logo.png" alt="Crafted"></a><nav class="nav-desktop"><ul><li><a href="/services.html">Services</a></li><li><a href="/pricing.html">Pricing</a></li><li><a href="/about.html">About</a></li><li><a href="/newsletter.html">Newsletter</a></li><li><a class="nav-cta" href="/contact.html">Let's talk</a></li></ul></nav><button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span></button></div><div class="nav-drawer"><ul><li><a href="/services.html">Services</a></li><li><a href="/pricing.html">Pricing</a></li><li><a href="/about.html">About</a></li><li><a href="/newsletter.html">Newsletter</a></li><li><a href="/contact.html">Contact</a></li><li><a href="tel:7206560230">720.656.0230</a></li></ul><a class="btn btn-primary nav-drawer-cta" href="/contact.html">Let's talk →</a></div></header><main><section class="about-hero"><div class="about-hero-grain" aria-hidden="true"></div><div class="container about-hero-inner"><div class="eyebrow-line">404</div><h1 class="about-hero-title">This page wandered off<span class="hl-dot">.</span></h1><p class="about-hero-sub">The link might be old, or there's a typo in the address. Either way, here's how to get back on track.</p><p style="margin-top:32px;display:flex;gap:12px;flex-wrap:wrap"><a class="btn btn-primary" href="/index.html">Go to the homepage →</a><a class="btn btn-secondary" href="/contact.html">Contact us →</a></p></div></section></main><footer class="site-footer"><div class="footer-inner"><div class="footer-mark"><img src="/assets/img/logo.png" alt="Crafted" style="height: 56px;"></div><div class="footer-tagline"><span class="footer-ipa">/kraft:id/</span> The art of talent, made headache-free.</div><div class="footer-row"><ul><li><a href="/services.html">Services</a></li><li><a href="/pricing.html">Pricing</a></li><li><a href="/about.html">About</a></li><li><a href="/newsletter.html">Newsletter</a></li><li><a href="/contact.html">Contact</a></li><li><a href="tel:7206560230">720.656.0230</a></li><li><a href="mailto:contact@craftedconsultingusa.com">contact@craftedconsultingusa.com</a></li><li><a href="https://www.linkedin.com/company/craftedconsultingusa/" target="_blank" rel="noopener">LinkedIn</a></li></ul><div class="footer-meta">© 2026 Crafted Partners · Denver, CO</div></div></div></footer>
+<script>
+/* Crafted static site — vanilla interactions (no framework, instant). */
+(function(){
+  const REVIEWS = [
+  { text: "It's rare to find a team that can match that level of precision. They don't operate like a traditional staffing firm. They bring a consulting mindset to everything they do.", name: 'Rachel Leonhart' },
+  { text: "Crafted did a complete HR overhaul for our agency. My stress level has been cut 90%. Our hiring process is now a snap and onboarding is actually fun.", name: "Rich O'Brien" },
+  { text: "The progress we've made this past year has far exceeded what we've achieved in the last five years on our own. Highly recommend.", name: 'Chelsea Krupa' },
+  { text: "He spent a year with our team and added value to almost every department he touched. He brought positive energy to a series of challenges and it made all the difference.", name: 'Patrick Shaw' },
+  { text: "If you're looking for a consultant that truly feels like a company team member, Crafted is who you should work with. We couldn't have asked for a more positive, knowledgeable, and tactful partner.", name: 'Caroline Stevens' },
+  { text: "If you're looking for the adult in the room, they won't only show up. They'll help you step into that role yourself.", name: 'Dannyelle Kain' },
+  { text: "They make complicated people-stuff feel manageable. Thoughtful, direct, and solutions-focused.", name: 'Tristan Derington' },
+  { text: "Knowledgeable, responsive, and takes the time to truly understand your organization's needs. I highly recommend them to any organization looking for a reliable, results-driven consultant.", name: 'Brian Allison' },
+  { text: "Crafted Consulting is the prescription your business needs. Unmatched accountability, seamless processes, and flawless execution.", name: 'Stuart Zall' },
+  { text: "I hired someone within two weeks and can't be happier with the candidate. Hannah is very communicative and thorough.", name: 'Shannon Miller' },
+  { text: "Their ability to break down complex situations, offer honest feedback, and encourage growth has truly made me a stronger, more confident leader.", name: 'Carley Jackson' },
+  { text: "You will grow as a leader and be grateful that your paths crossed.", name: 'Matthew Lopez' },
+];
+  // Mobile menu
+  var nav=document.querySelector('.site-nav');
+  var toggle=document.querySelector('.nav-toggle');
+  if(toggle&&nav){toggle.addEventListener('click',function(){
+    var open=nav.classList.toggle('menu-open');
+    toggle.setAttribute('aria-expanded',open?'true':'false');
+  });
+  nav.querySelectorAll('.nav-drawer a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('menu-open');});});}
+  // Nav scrolled state
+  function onScroll(){ if(nav){ nav.classList.toggle('scrolled', window.scrollY>40); } }
+  onScroll(); window.addEventListener('scroll',onScroll,{passive:true});
+  // Reviews carousel
+  var quote=document.querySelector('.reviews-section .review-quote');
+  var cite=document.querySelector('.reviews-section .quote-cite');
+  var dotsWrap=document.querySelector('.reviews-section .review-dots');
+  if(quote&&cite&&typeof REVIEWS!=='undefined'&&REVIEWS.length){
+    var i=0, n=REVIEWS.length, timer=null;
+    if(dotsWrap){dotsWrap.innerHTML='';for(var d=0;d<n;d++){var b=document.createElement('button');b.className='review-dot'+(d===0?' is-active':'');b.setAttribute('aria-label','Show review '+(d+1));(function(idx){b.addEventListener('click',function(){go(idx);reset();});})(d);dotsWrap.appendChild(b);}}
+    function render(){quote.textContent=REVIEWS[i].text;cite.textContent=REVIEWS[i].role?REVIEWS[i].name+' · '+REVIEWS[i].role:REVIEWS[i].name;if(dotsWrap){[].forEach.call(dotsWrap.children,function(el,idx){el.classList.toggle('is-active',idx===i);});}}
+    function go(x){i=(x+n)%n;render();}
+    function reset(){if(timer)clearInterval(timer);timer=setInterval(function(){go(i+1);},7000);}
+    var prev=document.querySelector('.reviews-section .review-arrow[data-dir="prev"]')||document.querySelectorAll('.reviews-section .review-arrow')[0];
+    var next=document.querySelector('.reviews-section .review-arrow[data-dir="next"]')||document.querySelectorAll('.reviews-section .review-arrow')[1];
+    if(prev)prev.addEventListener('click',function(){go(i-1);reset();});
+    if(next)next.addEventListener('click',function(){go(i+1);reset();});
+    render();reset();
+  }
+  // Contact form -> thank you
+  var form=document.querySelector('.contact-section form, form.contact-form');
+  if(form){form.addEventListener('submit',function(e){e.preventDefault();
+    var wrap=form.closest('.contact-side')||form.parentNode;
+    var ty=document.createElement('div');ty.className='thank-you';
+    ty.innerHTML='<h3>Thanks — we\'ll be in touch.</h3><p>We reply to every message within one business day.</p>';
+    form.replaceWith(ty);
+  });}
+})();
+</script>
+</body>
+</html>
