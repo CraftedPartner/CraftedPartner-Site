@@ -2825,3 +2825,25 @@ select:focus-visible,
 .dna-word .hl-dot { color: #F2C345; }
 .dna-p { margin: 16px 0 0; font-size: 17px; line-height: 1.55; color: #F5F0E8; max-width: 28ch; }
 @media (max-width: 760px) { .dna-grid { grid-template-columns: 1fr; gap: 32px; } }
+
+/* Pricing FAQ */
+.faq-section { background: #F5F0E8; }
+.faq-list { max-width: 860px; border-top: 1px solid rgba(125, 66, 40, .25); }
+.faq-item { border-bottom: 1px solid rgba(125, 66, 40, .25); }
+.faq-q {
+  list-style: none; cursor: pointer; position: relative;
+  padding: 24px 56px 24px 0;
+  font-family: var(--font-display); font-weight: 800; font-size: 21px; line-height: 1.25; color: #2E3530;
+}
+.faq-q::-webkit-details-marker { display: none; }
+.faq-q::after {
+  content: ""; position: absolute; right: 8px; top: 50%; width: 18px; height: 18px; margin-top: -9px;
+  background:
+    linear-gradient(#7D4228, #7D4228) center / 18px 3px no-repeat,
+    linear-gradient(#7D4228, #7D4228) center / 3px 18px no-repeat;
+  transition: transform .2s ease;
+}
+.faq-item[open] .faq-q::after { transform: rotate(45deg); }
+.faq-q:hover { color: #7D4228; }
+.faq-a { margin: -6px 0 0; padding: 0 56px 24px 0; font-size: 17px; line-height: 1.6; color: #2E3530; max-width: 62ch; }
+@media (max-width: 760px) { .faq-q { font-size: 18px; padding: 20px 44px 20px 0; } .faq-a { padding-right: 0; } }
