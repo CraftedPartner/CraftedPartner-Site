@@ -2871,3 +2871,13 @@ select:focus-visible,
 
 /* Dark backing behind the team photo so no light edge shows at fractional zoom */
 .team-band { background: #2E3530; }
+
+/* FAQ answers with a list */
+.faq-a p { margin: 0 0 12px; }
+.faq-a p:last-child { margin-bottom: 0; }
+.faq-ul { margin: 4px 0 14px; padding: 0; list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 6px 28px; }
+.faq-ul li { position: relative; padding-left: 18px; font-size: 16px; line-height: 1.5; }
+.faq-ul li::before { content: ""; position: absolute; left: 0; top: .6em; width: 7px; height: 7px; border-radius: 2px; background: #F2C345; }
+@media (max-width: 760px) { .faq-ul { grid-template-columns: 1fr; } }
+.faq-a p { font-size: 17px; line-height: 1.6; color: #2E3530; }
+div.faq-a { max-width: 72ch; }
