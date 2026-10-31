@@ -3036,3 +3036,15 @@ div.faq-a { max-width: 72ch; }
 @media (max-width: 760px) {
   html .reveal { transform: none; transition: opacity .35s ease; transition-delay: 0s; }
 }
+
+/* Fewer competing CTAs */
+.hero-textlink { display: inline-flex; align-items: center; gap: 6px; padding: 12px 6px; font-weight: 700; color: #F5F0E8; text-decoration: none; border-bottom: 2px solid rgba(245,240,232,.35); }
+.hero-textlink:hover { border-bottom-color: #F2C345; color: #FFFFFF; }
+.how-foot { justify-content: flex-start; }
+.about-cta-actions { align-items: center; }
+.cta-phone { color: #F5F0E8; font-weight: 700; text-decoration: none; border-bottom: 2px solid rgba(245,240,232,.35); padding-bottom: 2px; }
+.cta-phone:hover { border-bottom-color: #F2C345; }
+html { scroll-behavior: smooth; }
+#contact { scroll-margin-top: 70px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+@media (max-width: 760px) { .hero-cta .hero-textlink { width: auto !important; align-self: center; justify-content: center; } }
