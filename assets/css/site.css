@@ -3052,3 +3052,34 @@ html { scroll-behavior: smooth; }
 /* Keep the hero collage (and its About tile) clickable above the hero text layer */
 .hero .hero-collage { z-index: 3; }
 .svc-risk strong { color: #FFFFFF; font-weight: 700; margin-right: 6px; }
+
+/* Mobile/tablet hero: faces + reviews proof row, tighter top, 2x2 stats */
+.hero-proof { display: none; }
+@media (max-width: 1239px) {
+  .hero-proof { display: inline-flex; align-items: center; gap: 14px; margin: 4px 0 26px; text-decoration: none; color: #F5F0E8; }
+  .hp-faces { display: flex; align-items: center; }
+  .hp-faces img, .hp-more { width: 40px; height: 40px; border-radius: 50%; border: 2px solid #36433F; object-fit: cover; margin-left: -10px; filter: grayscale(1); }
+  .hp-faces img:first-child { margin-left: 0; }
+  .hp-more { display: inline-flex; align-items: center; justify-content: center; background: #F2C345; color: #2E3530; font-size: 13px; font-weight: 800; box-sizing: border-box; }
+  .hp-text { display: flex; flex-direction: column; gap: 2px; font-size: 14px; line-height: 1.3; color: rgba(245,240,232,.85); }
+  .hp-text strong { color: #FFFFFF; }
+  .hp-stars { display: flex; gap: 1px; color: #F2C345; }
+}
+@media (max-width: 760px) {
+  .hero { padding-top: 40px !important; }
+  .hero .hero-sub { margin: 18px 0 22px; }
+  .hero .hero-sub::after { display: none; }
+  .hero .meta { display: grid !important; grid-template-columns: 1fr 1fr; gap: 22px 16px; margin-top: 34px; }
+  .hero .meta .stat-num { font-size: 34px; }
+  .hero .meta .stat-label { font-size: 13px; }
+}
+
+@media (max-width: 1239px) {
+  .hero-proof { gap: 12px; max-width: 100%; }
+  .hp-faces { flex-shrink: 0; }
+  .hp-faces img, .hp-more { width: 34px; height: 34px; margin-left: -12px; flex-shrink: 0; }
+  .hp-faces img:first-child { margin-left: 0; }
+  .hp-more { font-size: 12px; position: relative; z-index: 1; }
+  .hp-text { min-width: 0; }
+}
+@media (max-width: 1239px) { .hp-more { filter: none; border-color: #36433F; } }
