@@ -2847,3 +2847,7 @@ select:focus-visible,
 .faq-q:hover { color: #7D4228; }
 .faq-a { margin: -6px 0 0; padding: 0 56px 24px 0; font-size: 17px; line-height: 1.6; color: #2E3530; max-width: 62ch; }
 @media (max-width: 760px) { .faq-q { font-size: 18px; padding: 20px 44px 20px 0; } .faq-a { padding-right: 0; } }
+
+/* Let the bottom CTA section's wave show (it was clipped, leaving a straight edge) */
+.about-cta-section { overflow: visible; }
+.about-cta-section::before { background-color: #394039; }
