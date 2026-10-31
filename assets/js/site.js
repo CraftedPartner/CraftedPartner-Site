@@ -45,7 +45,7 @@
 
 })();
 
-/* Savings calculator: 30% recruiter fee vs typical Crafted cost (about 80% less). */
+/* Savings calculator: 30% recruiter fee vs typical Crafted cost (about 85% less). */
 (function(){
   var range = document.getElementById('calc-salary');
   if (!range) return;
@@ -55,7 +55,7 @@
   function update(){
     var n = Math.min(50, Math.max(1, parseInt(hires.value, 10) || 1));
     var fee = range.value * 0.30 * n;
-    var crafted = fee * 0.20;
+    var crafted = fee * 0.15;
     document.getElementById('calc-salary-out').textContent = fmt(range.value);
     document.getElementById('calc-recruiter').textContent = fmt(fee);
     document.getElementById('calc-crafted').textContent = fmt(crafted);
