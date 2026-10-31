@@ -2851,3 +2851,23 @@ select:focus-visible,
 /* Let the bottom CTA section's wave show (it was clipped, leaving a straight edge) */
 .about-cta-section { overflow: visible; }
 .about-cta-section::before { background-color: #394039; }
+
+/* Waves overlap the next section by 2px so no hairline shows at fractional zoom levels */
+.about-cta-section::before,
+.about-intro::before,
+.antilist-section::before,
+.contact-section::before,
+.fit-section::before,
+.how-section::before,
+.pricing-section::before,
+.reviews-section::before,
+.service-detail::before,
+.stats-section::before,
+.team-section::before,
+.values-section::before,
+.work-section::before {
+  transform: translateY(calc(-100% + 2px));
+}
+
+/* Dark backing behind the team photo so no light edge shows at fractional zoom */
+.team-band { background: #2E3530; }
