@@ -3048,3 +3048,6 @@ html { scroll-behavior: smooth; }
 #contact { scroll-margin-top: 70px; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 @media (max-width: 760px) { .hero-cta .hero-textlink { width: auto !important; align-self: center; justify-content: center; } }
+
+/* Keep the hero collage (and its About tile) clickable above the hero text layer */
+.hero .hero-collage { z-index: 3; }
