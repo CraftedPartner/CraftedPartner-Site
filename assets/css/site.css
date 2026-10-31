@@ -2917,3 +2917,55 @@ div.faq-a { max-width: 72ch; }
 .calc-cta { display: inline-flex; }
 .calc-note { margin: 16px 0 0; font-size: 13px; line-height: 1.5; color: #5E574B; }
 @media (max-width: 860px) { .calc-grid { grid-template-columns: 1fr; gap: 32px; } .calc-cta { width: 100%; justify-content: center; box-sizing: border-box; } }
+
+/* HR Risk Check page */
+.rc-section { background: #F5F0E8; }
+.rc-form { max-width: 860px; }
+.rc-group { border: 0; margin: 0 0 40px; padding: 0; }
+.rc-group-h { font-family: var(--font-sans); font-weight: 700; font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: #7D4228; padding: 0 0 12px; }
+.rc-q { display: grid; grid-template-columns: 1fr auto; gap: 12px 32px; align-items: center; padding: 18px 0; border-top: 1px solid rgba(125,66,40,.2); }
+.rc-q-text { margin: 0; font-size: 17px; line-height: 1.45; color: #2E3530; font-weight: 500; }
+.rc-num { display: inline-block; min-width: 34px; font-family: var(--font-display); font-weight: 800; color: #7A9FA0; }
+.rc-opts { display: flex; gap: 8px; }
+.rc-opt { position: relative; cursor: pointer; }
+.rc-opt input { position: absolute; opacity: 0; inset: 0; cursor: pointer; }
+.rc-opt span { display: inline-block; padding: 10px 16px; border-radius: 999px; border: 1.5px solid rgba(46,53,48,.25); background: #FFFFFF; font-size: 14px; font-weight: 700; color: #2E3530; white-space: nowrap; transition: all .15s ease; }
+.rc-opt:hover span { border-color: #2E3530; }
+.rc-opt input:focus-visible + span { outline: 3px solid #F2C345; outline-offset: 2px; }
+.rc-opt input:checked + span { background: #2E3530; border-color: #2E3530; color: #FFFFFF; }
+.rc-opt input[value="yes"]:checked + span { background: #5E8786; border-color: #5E8786; }
+.rc-opt input[value="no"]:checked + span { background: #7D4228; border-color: #7D4228; }
+.rc-submit { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-top: 24px; border-top: 1px solid rgba(125,66,40,.2); }
+.rc-progress { font-size: 15px; font-weight: 600; color: #5E574B; }
+.rc-submit .btn[disabled] { opacity: .45; cursor: not-allowed; }
+.rc-results { max-width: 860px; margin-top: 56px; scroll-margin-top: 90px; }
+.rc-score-card { background: #2E3530; color: #F5F0E8; border-radius: 14px; border-top: 4px solid #F2C345; padding: 32px; }
+.rc-kicker { font-size: 12px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: #F2C345; }
+.rc-level { font-family: var(--font-display); font-weight: 900; font-size: 64px; line-height: 1; letter-spacing: -.02em; margin: 10px 0 18px; color: #FFFFFF; }
+.rc-level.rc-low { color: #A9D3C9; } .rc-level.rc-moderate { color: #F2C345; } .rc-level.rc-high { color: #F08C6A; }
+.rc-meter { height: 10px; border-radius: 999px; background: rgba(255,255,255,.15); overflow: hidden; }
+.rc-meter span { display: block; height: 100%; width: 0; border-radius: 999px; background: linear-gradient(90deg, #A9D3C9, #F2C345, #F08C6A); transition: width .8s ease; }
+.rc-summary { margin: 16px 0 0; font-size: 18px; line-height: 1.5; color: #EAF0EA; }
+.rc-gaps { margin-top: 40px; }
+.rc-gaps-h { margin: 0 0 16px; font-size: 28px; color: #2E3530; }
+.rc-gap-list { margin: 0 0 28px; padding: 0; list-style: none; counter-reset: gap; }
+.rc-gap-list li { counter-increment: gap; position: relative; padding: 16px 0 16px 52px; border-top: 1px solid rgba(125,66,40,.2); }
+.rc-gap-list li::before { content: counter(gap); position: absolute; left: 0; top: 14px; width: 34px; height: 34px; border-radius: 50%; background: #F2C345; color: #2E3530; font-family: var(--font-display); font-weight: 900; display: flex; align-items: center; justify-content: center; }
+.rc-gap-list strong { display: block; font-size: 17px; color: #2E3530; }
+.rc-gap-list span { display: block; margin-top: 4px; font-size: 16px; line-height: 1.5; color: #5E574B; }
+.rc-email { margin-top: 48px; background: #FFFFFF; border-radius: 14px; padding: 30px; box-shadow: 0 10px 30px rgba(46,53,48,.08); }
+.rc-email h3 { margin: 0; font-size: 24px; color: #2E3530; }
+.rc-email > p { margin: 6px 0 20px; color: #5E574B; }
+.rc-email .field label { color: #2E3530; }
+.rc-email .field input { border: 1px solid rgba(46,53,48,.25); }
+.rc-email .form-note { color: #5E574B; }
+.rc-thanks { margin: 0; font-size: 18px; font-weight: 700; color: #2E3530; }
+.rc-disclaimer { margin: 24px 0 0; font-size: 13px; color: #5E574B; }
+@media (max-width: 760px) {
+  .rc-q { grid-template-columns: 1fr; }
+  .rc-opts { flex-wrap: wrap; }
+  .rc-opt span { padding: 10px 18px; }
+  .rc-submit { flex-direction: column; align-items: stretch; }
+  .rc-submit .btn { justify-content: center; }
+  .rc-level { font-size: 48px; }
+}
