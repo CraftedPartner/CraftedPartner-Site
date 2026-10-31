@@ -3009,3 +3009,25 @@ div.faq-a { max-width: 72ch; }
 }
 .reviews-section .rv-card .rv-text::before { content: "\201C"; position: static; display: block; font-family: var(--font-display); font-style: normal; font-weight: 900; font-size: 56px; line-height: .6; height: auto; width: auto; color: #B98E78; opacity: 1; margin: 0 0 6px; transform: none; }
 .faq-a a { color: #7D4228; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+
+/* Gut check: tappable rows */
+.fit-sub { margin: 14px 0 0; font-size: 18px; color: rgba(245,240,232,.85); max-width: none; }
+.fit-label { display: grid; grid-template-columns: 28px 1fr; gap: 14px; align-items: start; cursor: pointer; width: 100%; }
+.fit-section .fit-row { display: block; padding: 0; }
+.fit-section .fit-label { padding: 20px 12px 20px 0; border-radius: 10px; transition: background .2s ease; }
+.fit-section .fit-label:hover { background: rgba(245,240,232,.04); }
+.fit-cb { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.fit-section .fit-check { background: transparent !important; border: 2px solid rgba(245,240,232,.45) !important; color: transparent !important; transition: all .2s ease; }
+.fit-section .fit-check svg { opacity: 0; transform: scale(.6); transition: all .2s ease; }
+.fit-cb:checked + .fit-check { background: #F2C345 !important; border-color: #F2C345 !important; color: #2E3530 !important; }
+.fit-cb:checked + .fit-check svg { opacity: 1; transform: none; }
+.fit-cb:focus-visible + .fit-check { outline: 3px solid #F2C345; outline-offset: 3px; }
+.fit-cb:checked ~ .fit-text { color: #FFFFFF; font-weight: 600; }
+.fit-section .fit-text { font-size: 18px; }
+#fit-count { font-weight: 800; color: #F2C345; }
+.fit-foot.is-hot p { color: #FFFFFF; font-weight: 600; }
+.fit-foot .btn { transition: transform .2s ease, box-shadow .2s ease, opacity .2s ease; opacity: .7; }
+.fit-foot.is-hot .btn { opacity: 1; transform: translateY(-2px); box-shadow: 0 10px 24px rgba(242,195,69,.35); }
+.fit-risk { margin: 22px 0 0; font-size: 16px; color: rgba(245,240,232,.85); max-width: none; }
+.fit-risk a { color: #F2C345; font-weight: 700; text-decoration: none; border-bottom: 2px solid rgba(242,195,69,.45); padding-bottom: 2px; }
+.fit-risk a:hover { border-bottom-color: #F2C345; }

@@ -109,3 +109,24 @@
   window.addEventListener('resize', draw);
   draw(); restart();
 })();
+
+/* Gut check: count taps, warm up the CTA at 2+, and carry picks into the homepage contact form. */
+(function(){
+  var boxes = document.querySelectorAll('.fit-cb'); if (!boxes.length) return;
+  var count = document.getElementById('fit-count'), msg = document.getElementById('fit-msg'), foot = document.querySelector('.fit-foot'), cta = document.getElementById('fit-cta');
+  var base = ' \u00b7 If two or more hit home, you\u2019re exactly who we built this for.';
+  function picked(){ return Array.prototype.filter.call(boxes, function(b){ return b.checked; }).map(function(b){ return b.value; }); }
+  function update(){
+    var n = picked().length;
+    count.textContent = n + ' of ' + boxes.length;
+    msg.lastChild.nodeValue = n >= 2 ? ' \u00b7 Sounds like we should talk.' : base;
+    foot.classList.toggle('is-hot', n >= 2);
+  }
+  Array.prototype.forEach.call(boxes, function(b){ b.addEventListener('change', update); });
+  cta.addEventListener('click', function(){
+    var p = picked(), box = document.getElementById('cf-message');
+    if (p.length && box && !box.value) box.value = 'From the gut check:\n- ' + p.join('\n- ');
+    if (window.gtag) gtag('event', 'gutcheck_cta', { checked: p.length });
+  });
+  update();
+})();
