@@ -72,3 +72,40 @@
   if (cta) cta.addEventListener('click', function(){ if (window.gtag) gtag('event', 'calculator_cta_click'); });
   update();
 })();
+
+/* Reviews carousel: pages of 3 (desktop), 2 (tablet), 1 (phone). Auto-advances; pauses on hover. */
+(function(){
+  var track = document.querySelector('.rv-track'); if (!track) return;
+  var cards = track.children, dotsWrap = document.querySelector('.rv-dots'), page = 0, timer = null;
+  function per(){ return window.innerWidth < 641 ? 1 : window.innerWidth < 900 ? 2 : 3; }
+  function pages(){ return Math.ceil(cards.length / per()); }
+  function draw(){
+    var n = pages(); page = Math.min(page, n - 1);
+    var card = cards[page * per()];
+    track.style.transform = 'translateX(' + (-(card ? card.offsetLeft : 0)) + 'px)';
+    if (dotsWrap.children.length !== n) {
+      dotsWrap.innerHTML = '';
+      for (var d = 0; d < n; d++) (function(i){
+        var b = document.createElement('button'); b.type = 'button'; b.className = 'rv-dot';
+        b.setAttribute('aria-label', 'Show reviews page ' + (i + 1));
+        b.addEventListener('click', function(){ page = i; draw(); restart(); });
+        dotsWrap.appendChild(b);
+      })(d);
+    }
+    Array.prototype.forEach.call(dotsWrap.children, function(b, i){ b.classList.toggle('is-active', i === page); });
+  }
+  function go(step){ var n = pages(); page = (page + step + n) % n; draw(); }
+  function restart(){
+    if (timer) clearInterval(timer);
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    timer = setInterval(function(){ go(1); }, 8000);
+  }
+  Array.prototype.forEach.call(document.querySelectorAll('.rv-arrow'), function(a){
+    a.addEventListener('click', function(){ go(parseInt(a.dataset.dir, 10)); restart(); });
+  });
+  var sec = track.closest('section');
+  sec.addEventListener('mouseenter', function(){ if (timer) clearInterval(timer); });
+  sec.addEventListener('mouseleave', restart);
+  window.addEventListener('resize', draw);
+  draw(); restart();
+})();
