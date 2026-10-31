@@ -3051,3 +3051,4 @@ html { scroll-behavior: smooth; }
 
 /* Keep the hero collage (and its About tile) clickable above the hero text layer */
 .hero .hero-collage { z-index: 3; }
+.svc-risk strong { color: #FFFFFF; font-weight: 700; margin-right: 6px; }
