@@ -3031,3 +3031,8 @@ div.faq-a { max-width: 72ch; }
 .fit-risk { margin: 22px 0 0; font-size: 16px; color: rgba(245,240,232,.85); max-width: none; }
 .fit-risk a { color: #F2C345; font-weight: 700; text-decoration: none; border-bottom: 2px solid rgba(242,195,69,.45); padding-bottom: 2px; }
 .fit-risk a:hover { border-bottom-color: #F2C345; }
+
+/* Phones: no stagger or slide, just a quick fade that starts before items scroll into view */
+@media (max-width: 760px) {
+  html .reveal { transform: none; transition: opacity .35s ease; transition-delay: 0s; }
+}
