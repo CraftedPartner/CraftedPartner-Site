@@ -2969,3 +2969,10 @@ div.faq-a { max-width: 72ch; }
   .rc-submit .btn { justify-content: center; }
   .rc-level { font-size: 48px; }
 }
+
+/* Homepage: HR Risk Check link under the service cards */
+.svc-risk { margin: 28px 0 0; text-align: center; font-size: 17px; color: #EAF0EA; }
+.svc-risk a { color: #F2C345; font-weight: 700; text-decoration: none; border-bottom: 2px solid rgba(242,195,69,.45); padding-bottom: 2px; white-space: nowrap; }
+.svc-risk a:hover { border-bottom-color: #F2C345; }
+@media (max-width: 600px) { .svc-risk a { white-space: normal; } }
+.svc-risk { max-width: none; }
