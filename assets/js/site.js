@@ -44,3 +44,31 @@
   targets.forEach(function(el){ el.classList.add('reveal'); io.observe(el); });
 
 })();
+
+/* Savings calculator: 30% recruiter fee vs typical Crafted cost (about 80% less). */
+(function(){
+  var range = document.getElementById('calc-salary');
+  if (!range) return;
+  var hires = document.getElementById('calc-hires');
+  var fmt = function(n){ return '$' + Math.round(n).toLocaleString('en-US'); };
+  var tracked = false;
+  function update(){
+    var n = Math.min(50, Math.max(1, parseInt(hires.value, 10) || 1));
+    var fee = range.value * 0.30 * n;
+    var crafted = fee * 0.20;
+    document.getElementById('calc-salary-out').textContent = fmt(range.value);
+    document.getElementById('calc-recruiter').textContent = fmt(fee);
+    document.getElementById('calc-crafted').textContent = fmt(crafted);
+    document.getElementById('calc-save').textContent = fmt(fee - crafted);
+  }
+  function used(){ if (!tracked && window.gtag) { gtag('event', 'calculator_used'); tracked = true; } update(); }
+  range.addEventListener('input', used);
+  hires.addEventListener('input', used);
+  hires.addEventListener('blur', function(){ hires.value = Math.min(50, Math.max(1, parseInt(hires.value, 10) || 1)); update(); });
+  Array.prototype.forEach.call(document.querySelectorAll('.calc-step'), function(b){
+    b.addEventListener('click', function(){ hires.value = Math.min(50, Math.max(1, (parseInt(hires.value, 10) || 1) + parseInt(b.dataset.step, 10))); used(); });
+  });
+  var cta = document.querySelector('.calc-cta');
+  if (cta) cta.addEventListener('click', function(){ if (window.gtag) gtag('event', 'calculator_cta_click'); });
+  update();
+})();

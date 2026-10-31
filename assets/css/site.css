@@ -2881,3 +2881,39 @@ select:focus-visible,
 @media (max-width: 760px) { .faq-ul { grid-template-columns: 1fr; } }
 .faq-a p { font-size: 17px; line-height: 1.6; color: #2E3530; }
 div.faq-a { max-width: 72ch; }
+
+/* Savings calculator (homepage + pricing) */
+.calc-section { position: relative; background: linear-gradient(165deg, #7A9FA0 0%, #6E9495 100%); color: #FFFFFF; }
+.calc-section::before {
+  content: ""; position: absolute; left: 0; right: 0; top: 0; height: 64px;
+  transform: translateY(calc(-100% + 2px)); background-color: #7A9FA0;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201440%2070'%20preserveAspectRatio='none'%3E%3Cpath%20d='M0,38%20C220,72%20440,8%20720,30%20C1000,52%201240,6%201440,34%20L1440,70%20L0,70%20Z'%20fill='%23000'/%3E%3C/svg%3E") no-repeat bottom / 100% 100%;
+  mask: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201440%2070'%20preserveAspectRatio='none'%3E%3Cpath%20d='M0,38%20C220,72%20440,8%20720,30%20C1000,52%201240,6%201440,34%20L1440,70%20L0,70%20Z'%20fill='%23000'/%3E%3C/svg%3E") no-repeat bottom / 100% 100%;
+  z-index: 3; pointer-events: none;
+}
+.calc-section .section-head h2 { color: #FFFFFF; }
+.calc-section .eyebrow-line { color: #FFFFFF; }
+.calc-section .eyebrow-line::before { background: #FFFFFF; }
+.calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+.calc-label { display: block; font-family: var(--font-sans); font-weight: 700; font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: #FFFFFF; margin: 0 0 10px; }
+.calc-label + .calc-stepper { margin-top: 0; }
+.calc-inputs .calc-label:not(:first-child) { margin-top: 36px; }
+.calc-salary-out { font-family: var(--font-display); font-weight: 900; font-size: 48px; line-height: 1; letter-spacing: -.02em; color: #FFFFFF; }
+.calc-range { width: 100%; margin: 18px 0 6px; accent-color: #F2C345; height: 28px; cursor: pointer; }
+.calc-range-ends { display: flex; justify-content: space-between; font-size: 13px; color: rgba(255,255,255,.8); }
+.calc-stepper { display: inline-flex; align-items: center; background: #FFFFFF; border-radius: 12px; overflow: hidden; }
+.calc-step { width: 48px; height: 52px; border: 0; background: #FFFFFF; color: #2E3530; font-size: 24px; font-weight: 700; cursor: pointer; }
+.calc-step:hover { background: #F5F0E8; }
+.calc-stepper input { width: 64px; height: 52px; border: 0; text-align: center; font-family: var(--font-display); font-weight: 800; font-size: 22px; color: #2E3530; -moz-appearance: textfield; }
+.calc-stepper input::-webkit-outer-spin-button, .calc-stepper input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+.calc-result { background: #FFFFFF; color: #2E3530; border-radius: 14px; border-top: 4px solid #F2C345; padding: 30px 30px 26px; box-shadow: 0 16px 40px rgba(0,0,0,.18); }
+.calc-row { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 12px 0; border-bottom: 1px solid rgba(125,66,40,.18); font-size: 16px; }
+.calc-row strong { font-family: var(--font-display); font-weight: 800; font-size: 24px; }
+.calc-row:first-child strong { color: #7D4228; text-decoration: line-through; text-decoration-thickness: 2px; }
+.calc-save { display: flex; flex-direction: column; gap: 4px; padding: 20px 0 18px; }
+.calc-save-label { font-size: 14px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #5E574B; }
+.calc-save-num { font-family: var(--font-display); font-weight: 900; font-size: clamp(48px, 5vw, 64px); line-height: 1; letter-spacing: -.02em; color: #2E3530; }
+.calc-save-num::after { content: ""; display: block; width: 72px; height: 5px; margin-top: 12px; border-radius: 3px; background: linear-gradient(90deg, #F2C345, #7D4228); }
+.calc-cta { display: inline-flex; }
+.calc-note { margin: 16px 0 0; font-size: 13px; line-height: 1.5; color: #5E574B; }
+@media (max-width: 860px) { .calc-grid { grid-template-columns: 1fr; gap: 32px; } .calc-cta { width: 100%; justify-content: center; box-sizing: border-box; } }
