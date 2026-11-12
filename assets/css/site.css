@@ -3097,3 +3097,8 @@ html { scroll-behavior: smooth; }
 }
 .thank-you .ty-cal { margin-top: 14px; font-family: var(--font-sans); font-size: 16px; }
 .thank-you .ty-cal a { color: #7D4228; font-weight: 700; }
+
+.faq-cal { max-width: 860px; box-sizing: border-box; margin-top: 36px; }
+.post-cal { margin: 40px 0 0; }
+.article-cta .article-cta-cal { display: inline-block; margin-left: 18px; font-weight: 700; color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 760px) { .article-cta .article-cta-cal { display: block; margin: 14px 0 0; } }
