@@ -131,3 +131,9 @@
   });
   update();
 })();
+
+// Calendly link clicks
+document.addEventListener('click', function (e) {
+  var a = e.target.closest && e.target.closest('a[data-cal]');
+  if (a && window.gtag) gtag('event', 'calendly_click', { location: a.getAttribute('data-cal') });
+});
