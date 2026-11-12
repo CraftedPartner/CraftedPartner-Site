@@ -3085,9 +3085,15 @@ html { scroll-behavior: smooth; }
 @media (max-width: 1239px) { .hp-more { filter: none; border-color: #36433F; } }
 
 /* Calendly links */
-.form-alt { margin: 18px 0 0; font-size: 15px; color: var(--fg-2); }
-.form-alt a { font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
-.contact-section .form-alt { color: rgba(255,255,255,0.75); }
-.contact-section .form-alt a { color: #F2C345; }
+.form-alt { display: flex; align-items: center; gap: 12px; margin: 22px 0 0; padding: 16px 20px; border-radius: 10px; background: rgba(242,195,69,0.12); border: 1px solid rgba(242,195,69,0.45); font-size: 17px; color: var(--fg-1); }
+.form-alt-ic { flex: none; color: #F2C345; }
+.form-alt a { margin-left: auto; flex: none; background: #F2C345; color: #2E3530; font-weight: 700; text-decoration: none; padding: 10px 16px; border-radius: 6px; }
+.form-alt a:hover { background: #F5CF62; }
+.contact-section .form-alt { color: #fff; }
+@media (max-width: 760px) {
+  .form-alt { flex-wrap: wrap; }
+  .form-alt span { flex: 1; }
+  .form-alt a { margin-left: 0; width: 100%; box-sizing: border-box; text-align: center; }
+}
 .thank-you .ty-cal { margin-top: 14px; font-family: var(--font-sans); font-size: 16px; }
 .thank-you .ty-cal a { color: #7D4228; font-weight: 700; }
