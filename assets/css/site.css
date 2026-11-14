@@ -2778,22 +2778,26 @@ select:focus-visible,
 /* Homepage service cards */
 .svc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .svc-card {
-  display: flex; flex-direction: column; gap: 10px;
-  background: #FFFFFF; border-radius: 14px; border-top: 4px solid #F2C345;
-  padding: 32px 30px 28px; text-decoration: none; color: #2E3530;
+  display: flex; flex-direction: column;
+  background: #FFFFFF; border-radius: 18px;
+  padding: 34px 32px 30px; text-decoration: none; color: #2E3530;
   box-shadow: 0 10px 30px rgba(0, 0, 0, .18);
   transition: transform .2s ease, box-shadow .2s ease;
 }
 .svc-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0, 0, 0, .28); }
-.svc-name { font-family: var(--font-display); font-weight: 800; font-size: 28px; line-height: 1.1; letter-spacing: -.01em; }
-.svc-tag { font-family: var(--font-serif); font-style: italic; font-size: 19px; color: #7D4228; }
-.svc-body { margin: 6px 0 0; font-size: 16px; line-height: 1.55; color: #2E3530; max-width: 34ch; }
-.svc-more { margin-top: auto; padding-top: 18px; font-weight: 700; font-size: 14px; color: #7D4228; }
+.svc-ic { width: 52px; height: 52px; border-radius: 14px; background: #F2C345; display: flex; align-items: center; justify-content: center; margin-bottom: 22px; }
+.svc-ic svg { width: 26px; height: 26px; fill: none; stroke: #2E3530; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+.svc-name { font-family: var(--font-display); font-weight: 900; font-size: 27px; line-height: 1.1; letter-spacing: -.02em; }
+.svc-tag { margin-top: 6px; font-size: 16px; font-weight: 600; color: #7D4228; }
+.svc-ul { list-style: none; margin: 22px 0 0; padding: 20px 0 0; border-top: 1px solid #ECE6DA; display: grid; gap: 12px; }
+.svc-ul li { position: relative; padding-left: 26px; font-size: 16px; line-height: 1.35; color: #2E3530; }
+.svc-ul li::before { content: ""; position: absolute; left: 0; top: 2px; width: 16px; height: 16px; border-radius: 50%; background: #F2C345 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12.5l4 4L18 8' fill='none' stroke='%232E3530' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/11px no-repeat; }
+.svc-more { margin-top: auto; padding-top: 26px; font-weight: 700; font-size: 15px; color: #7D4228; }
 .svc-more span { display: inline-block; transition: transform .2s ease; }
 .svc-card:hover .svc-more span { transform: translateX(4px); }
 @media (max-width: 900px) {
   .svc-grid { grid-template-columns: 1fr; gap: 16px; }
-  .svc-card { padding: 26px 22px 22px; }
+  .svc-card { padding: 28px 24px 24px; }
 }
 
 /* Pricing cards: same-size prices on one line, rows aligned across both cards */
