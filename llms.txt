@@ -5,7 +5,7 @@
 ## Services
 
 - [Recruiting](https://www.craftedconsultingusa.com/services.html#recruiting): Targeted sourcing, screening, scheduling, and offer support. Billed hourly, not a percentage of salary. Clients typically have strong candidates to review within about 48 hours, and on average pay about 85% less than a recruiter charging 25 to 30% of first-year salary.
-- [Fractional HR](https://www.craftedconsultingusa.com/services.html#fractional-hr): A senior HR partner, part-time. Compliance and policy updates, employee handbooks, corrective action and terminations, unemployment claims, performance management, HR audits, multi-state compliance, onboarding, manager coaching, and payroll and benefits support. Response within 24 hours, usually minutes. Phone, email, or onsite.
+- [Fractional HR](https://www.craftedconsultingusa.com/services.html#fractional-hr): A senior HR partner, part-time. Compliance and policy updates, employee handbooks, corrective action and terminations, unemployment claims, performance management, HR audits, multi-state compliance, onboarding, manager coaching, and payroll and benefits support. Responses in less than 2 hours. Phone, email, or onsite.
 - [Management Consulting](https://www.craftedconsultingusa.com/services.html#consulting): Org design and role clarity, leadership development, scorecards and accountability, process improvement, EOS support, and AI training for teams.
 
 ## Pricing
