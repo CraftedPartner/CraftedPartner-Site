@@ -3169,3 +3169,17 @@ html { scroll-behavior: smooth; }
 
 .field-hint { display: block; margin-top: 8px; font-size: 14px; color: #5E574B; }
 .field-hint a { color: #7D4228; font-weight: 700; }
+
+/* Hero: longer headline + rating on desktop */
+.hero .hero-title { text-wrap: balance; }
+@media (min-width: 1240px) {
+  .hero .hero-title { font-size: clamp(60px, 4.9vw, 76px); max-width: 640px; }
+  .hero-proof { display: inline-flex; align-items: center; gap: 10px; margin: 0 0 28px; text-decoration: none; color: #F5F0E8; }
+  .hero-proof .hp-faces { display: none; }
+  .hero-proof .hp-text { display: flex; align-items: center; gap: 10px; font-size: 15px; color: rgba(245,240,232,.85); }
+  .hero-proof .hp-text strong { color: #fff; }
+  .hero-proof .hp-stars { display: flex; gap: 2px; color: #F2C345; }
+  .hero-proof .hp-stars svg { width: 17px; height: 17px; }
+}
+.hero .hero-title .hl-dot-w { color: #fff; }
+@media (max-width: 760px) { .hero .hero-title .hl-underline { display: none; } .hero .hero-title { font-size: 44px; } }
