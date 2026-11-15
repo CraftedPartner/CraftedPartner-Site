@@ -3106,3 +3106,20 @@ html { scroll-behavior: smooth; }
 .post-cal { margin: 40px 0 0; }
 .article-cta .article-cta-cal { display: inline-block; margin-left: 18px; font-weight: 700; color: inherit; text-decoration: underline; text-underline-offset: 3px; }
 @media (max-width: 760px) { .article-cta .article-cta-cal { display: block; margin: 14px 0 0; } }
+
+/* Form: optional field hint */
+.field label .opt { font-weight: 500; text-transform: none; letter-spacing: 0; opacity: .7; }
+
+/* Phone-only quick contact bar */
+.m-bar { display: none; }
+@media (max-width: 760px) {
+  .m-bar { display: grid; grid-template-columns: 1fr 2fr; gap: 10px; position: fixed; left: 0; right: 0; bottom: 0; z-index: 40;
+    padding: 10px 14px calc(10px + env(safe-area-inset-bottom)); background: rgba(30,36,33,.96); border-top: 1px solid rgba(242,195,69,.35);
+    -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
+  .m-bar a { display: flex; align-items: center; justify-content: center; gap: 8px; height: 46px; border-radius: 8px; font-family: var(--font-sans); font-weight: 700; font-size: 16px; text-decoration: none; }
+  .m-bar-call { color: #fff; border: 1px solid rgba(255,255,255,.35); }
+  .m-bar-call svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linejoin: round; }
+  .m-bar-book { background: #F2C345; color: #2E3530; }
+  body { padding-bottom: calc(66px + env(safe-area-inset-bottom)); }
+  .site-nav.menu-open ~ .m-bar { display: none; }
+}
