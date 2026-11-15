@@ -3173,7 +3173,7 @@ html { scroll-behavior: smooth; }
 /* Hero: longer headline + rating on desktop */
 .hero .hero-title { text-wrap: balance; }
 @media (min-width: 1240px) {
-  .hero .hero-title { font-size: clamp(60px, 4.9vw, 76px); max-width: 640px; }
+  .hero .hero-title { font-size: clamp(60px, 4.9vw, 72px); max-width: 680px; }
   .hero-proof { display: inline-flex; align-items: center; gap: 10px; margin: 0 0 28px; text-decoration: none; color: #F5F0E8; }
   .hero-proof .hp-faces { display: none; }
   .hero-proof .hp-text { display: flex; align-items: center; gap: 10px; font-size: 15px; color: rgba(245,240,232,.85); }
@@ -3183,3 +3183,15 @@ html { scroll-behavior: smooth; }
 }
 .hero .hero-title .hl-dot-w { color: #fff; }
 @media (max-width: 760px) { .hero .hero-title .hl-underline { display: none; } .hero .hero-title { font-size: 44px; } }
+
+/* Desktop hero: tidier stack (headline, subline, buttons, rating, stats) */
+@media (min-width: 1240px) {
+  .hero-inner { display: flex; flex-direction: column; align-items: flex-start; }
+  .hero .hero-title { order: 1; }
+  .hero .hero-sub { order: 2; margin: 26px 0 0 !important; max-width: 520px; }
+  .hero .hero-sub::after { display: none !important; }
+  .hero-cta { order: 3; margin-top: 34px !important; }
+  .hero-proof { order: 4; margin: 18px 0 0 !important; }
+  .hero .meta { order: 5; margin-top: 44px !important; align-self: stretch; max-width: 600px; }
+  .hero-cta .hero-book, .hero-cta .btn-primary { border-radius: 999px; height: 52px; padding: 0 26px; }
+}
