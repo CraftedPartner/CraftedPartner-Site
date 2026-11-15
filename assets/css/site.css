@@ -3123,3 +3123,32 @@ html { scroll-behavior: smooth; }
   body { padding-bottom: calc(66px + env(safe-area-inset-bottom)); }
   .site-nav.menu-open ~ .m-bar { display: none; }
 }
+
+/* Desktop nav: Book a time link */
+.site-nav .nav-book a { font-weight: 700; white-space: nowrap; }
+.site-nav .nav-book svg { width: 17px; height: 17px; margin-right: 7px; vertical-align: -3px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; }
+.site-nav:not(.scrolled) .nav-book a { color: #F2C345; }
+
+/* Hero: Book a time (desktop only; phones have the bottom bar) */
+.hero-cta .hero-book { display: inline-flex; align-items: center; gap: 9px; background: transparent; color: #F5F0E8; border: 2px solid rgba(245,240,232,.55); }
+.hero-cta .hero-book svg { width: 19px; height: 19px; fill: none; stroke: #F2C345; stroke-width: 2.2; stroke-linecap: round; }
+.hero-cta .hero-book:hover { border-color: #F2C345; color: #fff; }
+@media (min-width: 761px) { .hero-cta .hero-textlink { display: none; } }
+@media (max-width: 760px) { .hero-cta .hero-book { display: none !important; } }
+
+/* Contact form: bigger booking strip */
+.form-alt--big { gap: 18px; padding: 22px 24px; border-radius: 14px; background: linear-gradient(100deg, rgba(242,195,69,.2), rgba(242,195,69,.08)); border: 1px solid rgba(242,195,69,.55); }
+.fa-faces { display: flex; flex: none; align-items: center; }
+.fa-faces img, .fa-faces .hp-more { width: 40px; height: 40px; border-radius: 50%; border: 2px solid #2E3530; margin-left: -10px; object-fit: cover; }
+.fa-faces img:first-child { margin-left: 0; }
+.fa-faces .hp-more { display: inline-flex; align-items: center; justify-content: center; background: #F2C345; color: #2E3530; font-weight: 800; font-size: 13px; box-sizing: border-box; }
+.fa-txt { display: flex; flex-direction: column; gap: 3px; }
+.fa-txt strong { font-family: var(--font-display); font-weight: 900; font-size: 22px; letter-spacing: -.01em; }
+.fa-txt span { font-size: 15px; opacity: .85; }
+.form-alt--big a { padding: 13px 20px; font-size: 16px; }
+@media (max-width: 760px) {
+  .form-alt--big { flex-wrap: wrap; }
+  .form-alt--big .fa-txt { flex: 1 1 100%; }
+}
+.form-alt--big .fa-faces, .form-alt--big .fa-faces .hp-more { flex: none; }
+.form-alt--big .fa-txt span { flex: none; }
