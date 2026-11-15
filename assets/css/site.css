@@ -3154,7 +3154,7 @@ html { scroll-behavior: smooth; }
 .form-alt--big .fa-txt span { flex: none; }
 
 /* Spam honeypot */
-.hp-field { position: absolute !important; left: -9999px !important; width: 1px; height: 1px; opacity: 0; }
+.hp-field { display: none !important; }
 /* Privacy page */
 .privacy-body { max-width: 760px; }
 .privacy-body h2 { margin: 40px 0 12px; font-family: var(--font-display); font-weight: 900; font-size: 26px; letter-spacing: -.01em; text-transform: none; }
