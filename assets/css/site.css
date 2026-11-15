@@ -3166,3 +3166,6 @@ html { scroll-behavior: smooth; }
 .careers-form { max-width: 760px; }
 .careers-form input[type=file] { height: auto; padding: 12px; background: #fff; border: 1px dashed #B9B2A6; border-radius: 8px; width: 100%; box-sizing: border-box; }
 .careers-err { margin-top: 14px; color: #7D4228; font-weight: 600; }
+
+.field-hint { display: block; margin-top: 8px; font-size: 14px; color: #5E574B; }
+.field-hint a { color: #7D4228; font-weight: 700; }
