@@ -31,6 +31,7 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
+  try{var q=location.search;if(/[?&]team=1\b/.test(q))localStorage.setItem('crafted_team','1');if(/[?&]team=0\b/.test(q))localStorage.removeItem('crafted_team');if(localStorage.getItem('crafted_team')==='1')gtag('set',{traffic_type:'internal'});}catch(e){}
   gtag('config', 'G-99HH04SY9J');
 </script>
 <script type="application/ld+json">
@@ -251,6 +252,6 @@
   });
 })();
 </script>
-<script src="../assets/js/site.js?v=b342e918" defer></script>
+<script src="../assets/js/site.js?v=fdffd240" defer></script>
 </body>
 </html>

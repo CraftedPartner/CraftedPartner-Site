@@ -137,3 +137,17 @@ document.addEventListener('click', function (e) {
   var a = e.target.closest && e.target.closest('a[data-cal]');
   if (a && window.gtag) gtag('event', 'calendly_click', { location: a.getAttribute('data-cal') });
 });
+
+// Team device flag: ?team=1 stops this device from counting in Analytics; ?team=0 undoes it.
+(function(){
+  var q = location.search, msg = null;
+  if (/[?&]team=1\b/.test(q)) msg = 'This device is now marked as Crafted team. Your visits won’t count in Analytics.';
+  if (/[?&]team=0\b/.test(q)) msg = 'Team mark removed. This device counts in Analytics again.';
+  if (!msg) return;
+  var d = document.createElement('div');
+  d.setAttribute('role', 'status');
+  d.style.cssText = 'position:fixed;left:50%;top:84px;transform:translateX(-50%);z-index:60;max-width:90vw;padding:12px 18px;border-radius:10px;background:#2E3530;color:#fff;font:600 15px/1.4 Archivo,system-ui,sans-serif;box-shadow:0 10px 30px rgba(0,0,0,.3);border:1px solid #F2C345';
+  d.textContent = msg;
+  document.body.appendChild(d);
+  setTimeout(function(){ d.remove(); }, 6000);
+})();
