@@ -3203,3 +3203,24 @@ html { scroll-behavior: smooth; }
   html .reveal.in-view { transform: none; }
   html .svc-card.reveal.in-view:hover { transform: translateY(-4px); }
 }
+
+/* Audit fixes */
+/* Tablet + small laptop hero: match the desktop cleanup */
+@media (min-width: 761px) and (max-width: 1239px) {
+  .hero .hero-sub::after { display: none !important; }
+  .hero .hero-sub { margin-bottom: 22px !important; }
+  .hero-cta .hero-book, .hero-cta .btn-primary { border-radius: 999px; height: 52px; padding: 0 26px; }
+}
+/* In-page jumps land below the sticky menu */
+section[id], [id="contact"], [id="savings"], [id="services"], [id="faq"] { scroll-margin-top: 84px; }
+/* Bigger tap areas on phones (dots look the same) */
+@media (max-width: 760px) {
+  .rv-dot { pointer-events: none; } /* 12 dots are too small to tap; phones use the arrows and swipe */
+  .cta-phone, .back-link { display: inline-block; padding: 10px 0; }
+  .contact-meta a { display: inline-block; padding: 6px 0; }
+}
+/* Footer tagline: system mono so the web font isn't loaded on every page */
+.footer-tagline .footer-ipa { font-family: ui-monospace, Menlo, Consolas, monospace; }
+@media (max-width: 760px) {
+  .field-hint a, .article-cta .article-cta-cal { display: inline-block; padding: 8px 0; }
+}
