@@ -26,7 +26,7 @@
       var isGrid = el.tagName !== 'FORM' && (cs.display === 'grid' || cs.display === 'flex') && el.children.length >= 3;
       if (isGrid) {
         Array.prototype.forEach.call(el.children, function(child, n){
-          if (!small) child.style.transitionDelay = Math.min(n, 5) * 80 + 'ms';
+          if (!small) child.style.transitionDelay = Math.min(n, 3) * 60 + 'ms';
           targets.push(child);
         });
       } else {
@@ -40,7 +40,7 @@
     entries.forEach(function(e){
       if (e.isIntersecting) { e.target.classList.add('in-view'); io.unobserve(e.target); }
     });
-  }, { rootMargin: small ? '0px 0px 15% 0px' : '0px' });
+  }, { rootMargin: small ? '0px 0px 15% 0px' : '0px 0px 8% 0px' });
 
   targets.forEach(function(el){ el.classList.add('reveal'); io.observe(el); });
 

@@ -3195,3 +3195,11 @@ html { scroll-behavior: smooth; }
   .hero .meta { order: 5; margin-top: 44px !important; align-self: stretch; max-width: 600px; }
   .hero-cta .hero-book, .hero-cta .btn-primary { border-radius: 999px; height: 52px; padding: 0 26px; }
 }
+
+/* Desktop reveal: every revealed item fades and slides together (some cards had their own
+   transition that dropped the fade, so they popped in) */
+@media (min-width: 761px) {
+  html .reveal { transform: translateY(14px); transition-property: opacity, transform, box-shadow, background-color, border-color; transition-duration: 380ms; transition-timing-function: cubic-bezier(.2,.7,.2,1); }
+  html .reveal.in-view { transform: none; }
+  html .svc-card.reveal.in-view:hover { transform: translateY(-4px); }
+}
