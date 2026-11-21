@@ -4,7 +4,7 @@
   var steps = Array.prototype.slice.call(form.querySelectorAll('.dq-step'));
   var back = document.getElementById('dq-back'), next = document.getElementById('dq-next'), submit = document.getElementById('dq-submit');
   var bar = document.getElementById('dq-bar'), saved = document.getElementById('dq-saved'), err = document.getElementById('dq-err');
-  var KEY = 'crafted_discovery_v1', cur = 0, t;
+  var KEY = 'crafted_discovery_v2', cur = 0, t;
 
   function store(){ try { var d = {}; Array.prototype.forEach.call(form.elements, function(el){
       if (!el.name || el.name === '_gotcha') return;
