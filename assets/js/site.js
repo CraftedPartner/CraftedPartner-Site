@@ -132,6 +132,14 @@
   update();
 })();
 
+// Phone link clicks (counted as leads in Google Ads)
+document.addEventListener('click', function (e) {
+  var a = e.target.closest && e.target.closest('a[href^="tel:"]');
+  if (!a || !window.gtag) return;
+  var where = a.getAttribute('data-phone') || (a.closest('.m-bar') ? 'mobile-bar' : a.closest('footer') ? 'footer' : a.closest('.nav-drawer') ? 'mobile-menu' : 'page');
+  gtag('event', 'phone_click', { location: where });
+});
+
 // Calendly link clicks
 document.addEventListener('click', function (e) {
   var a = e.target.closest && e.target.closest('a[data-cal]');
@@ -150,4 +158,11 @@ document.addEventListener('click', function (e) {
   d.textContent = msg;
   document.body.appendChild(d);
   setTimeout(function(){ d.remove(); }, 6000);
+})();
+
+// Contact form: gray the team size picker until a choice is made
+(function(){
+  var sel = document.getElementById('cf-size'); if (!sel) return;
+  function f(){ sel.classList.toggle('is-empty', !sel.value); }
+  sel.addEventListener('change', f); f();
 })();
