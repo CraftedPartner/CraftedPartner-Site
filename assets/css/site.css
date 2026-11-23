@@ -3265,3 +3265,17 @@ section[id], [id="contact"], [id="savings"], [id="services"], [id="faq"] { scrol
   .dq-page ~ .m-bar, body:has(.dq-page) .m-bar { display: none; }
   body:has(.dq-page) { padding-bottom: 0; }
 }
+
+/* Desktop nav: phone number (click to call) */
+.site-nav .nav-phone a { font-weight: 700; white-space: nowrap; }
+.site-nav .nav-phone svg { width: 16px; height: 16px; margin-right: 6px; vertical-align: -3px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linejoin: round; }
+@media (max-width: 1080px) { .site-nav .nav-phone svg { display: none; } }
+
+/* Pricing calculator: next step under the result */
+.calc-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px; }
+.calc-actions .calc-alt { font-size: 14px; font-weight: 600; color: #2E3530; }
+.calc-actions .calc-alt:hover { text-decoration: underline; }
+@media (max-width: 860px) { .calc-actions { flex-direction: column; align-items: stretch; text-align: center; } }
+
+/* Contact form: optional select placeholder looks like a placeholder */
+.form select:invalid, .form select.is-empty { color: #8A8274; }
