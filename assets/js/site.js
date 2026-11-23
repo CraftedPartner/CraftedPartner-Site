@@ -140,11 +140,51 @@ document.addEventListener('click', function (e) {
   gtag('event', 'phone_click', { location: where });
 });
 
-// Calendly link clicks
-document.addEventListener('click', function (e) {
-  var a = e.target.closest && e.target.closest('a[data-cal]');
-  if (a && window.gtag) gtag('event', 'calendly_click', { location: a.getAttribute('data-cal') });
-});
+// Booking: Calendly opens in a popup on the page, so we can tell when a call is
+// actually scheduled. Clicks send calendly_click (kept for history) and book_call_click;
+// a finished booking sends book_call. If Calendly's script hasn't loaded, the link
+// opens in a new tab as before.
+(function(){
+  var ready = false, loading = false, lastWhere = 'unknown';
+  function load(){
+    if (loading) return; loading = true;
+    var css = document.createElement('link'); css.rel = 'stylesheet';
+    css.href = 'https://assets.calendly.com/assets/external/widget.css';
+    document.head.appendChild(css);
+    var js = document.createElement('script'); js.async = true;
+    js.src = 'https://assets.calendly.com/assets/external/widget.js';
+    js.onload = function(){ ready = !!(window.Calendly && Calendly.initPopupWidget); };
+    document.head.appendChild(js);
+  }
+  // Load once the page is idle, or as soon as someone heads for a booking link.
+  if ('requestIdleCallback' in window) requestIdleCallback(load, { timeout: 4000 }); else setTimeout(load, 2500);
+  ['pointerover', 'touchstart', 'focusin'].forEach(function(t){
+    document.addEventListener(t, function(e){ if (e.target.closest && e.target.closest('a[data-cal]')) load(); }, { passive: true });
+  });
+
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[data-cal]');
+    if (!a) return;
+    lastWhere = a.getAttribute('data-cal') || 'unknown';
+    if (window.gtag) {
+      gtag('event', 'calendly_click', { location: lastWhere });
+      gtag('event', 'book_call_click', { location: lastWhere });
+    }
+    if (!ready || e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return;
+    e.preventDefault();
+    var url = a.href + (a.href.indexOf('?') < 0 ? '?' : '&') + 'utm_source=website&utm_content=' + encodeURIComponent(lastWhere);
+    Calendly.initPopupWidget({ url: url });
+  });
+
+  var booked = false;
+  window.addEventListener('message', function (e) {
+    if (e.origin !== 'https://calendly.com' || !e.data || typeof e.data.event !== 'string') return;
+    if (e.data.event === 'calendly.event_scheduled' && !booked) {
+      booked = true;
+      if (window.gtag) gtag('event', 'book_call', { location: lastWhere });
+    }
+  });
+})();
 
 // Team device flag: ?team=1 stops this device from counting in Analytics; ?team=0 undoes it.
 (function(){
